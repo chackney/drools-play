@@ -1,0 +1,14 @@
+package star.barnards.port.rules
+ 
+import com.hackney.model.Cargo;
+ 
+rule "Trade Ban Everythin"
+    dialect "mvel"
+    when
+        m : Cargo( )
+    then
+        System.out.println( "Reject everything, local planet for local people" );
+
+end
+
+

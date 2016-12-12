@@ -1,0 +1,20 @@
+package star.barnards.port.rules
+ 
+import com.hackney.model.Cargo;
+ 
+rule "Trade Ban from epslion minor"
+    dialect "mvel"
+    when
+        m : Cargo( originSpacePort == "Epsilon Minor", cargoDescription : cargoDescription )
+    then
+        System.out.println( "Reject Cargo from Epslion Minor" );
+
+end
+
+rule "Fast Track from Earth"
+    dialect "java"
+    when
+        Cargo( originSpacePort == "Earth", cargoDescription : cargoDescription )
+    then
+        System.out.println( "Cargo " + cargoDescription + " from earth - FAST TRACKED" );
+end
